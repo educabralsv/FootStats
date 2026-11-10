@@ -1,0 +1,267 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    background-color: lightgreen;
+    width: 100vw;
+    height: 11vh;
+    flex-direction: row;
+}
+
+.logo {
+    width: 35%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.logo img {
+    width: 160px;
+    margin-left: 80px;
+    margin-top: 2px;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    color:#0B1F3A;
+    justify-content: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.botao-login {
+    background-color: #0B1F3A ;
+    color:white;
+    width: 7vw;
+    height: 5vh;
+    border-radius: 6px;
+}
+
+.conteudo-principal{
+    display: flex;
+    min-height: 500px;
+    background-image: url("../assets/background_img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.conteudo-principal .conteiner {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 55%;
+    padding-top: 5%;
+    margin-left: 5%;
+    font-size: 25px;
+    color: white;
+}
+
+.conteiner button{
+    background-color: lightgreen;
+    color: #0B1F3A;
+    width: 10vw;
+    height: 6vh;
+    border: 2px;
+}
+
+.sobre-site {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.sobre-site h2 {
+    color: #0B1F3A;
+    white-space: nowrap; /* Impede que o texto quebre de linha */
+    font-size: 35px;
+    position: relative;
+    left: -60px; /* Desloca o título 60px para a esquerda */
+}
+
+.sobre-site h2 span {
+    border-bottom: 3px solid lightgreen;
+    padding-bottom: 4px;
+}
+
+.sobre-site p {
+    color: #0B1F3A;
+    font-size: 20px;
+    width: 55%;
+    padding: 0;
+    margin: 40px;
+}
+
+.sobre-site img {
+    width: 230px;
+    height: auto;
+    transform: scale(1.4); /* Aumenta visualmente a imagem em 40% */
+    transform-origin: right center /* Faz o aumento acontecer a partir do lado esquerdo */
+}
+
+.valores {
+    text-align: center;
+    padding: 40px 10%;
+    background-color: #f5faff;
+}
+
+.valores h2 {
+    margin-top: 7%;
+    color: #0B1F3A;
+    font-size: 35px;
+}
+
+.valores span {
+    border-bottom: 3px solid lightgreen;
+    padding-bottom: 4px;
+}
+
+.cards-valores {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.cards-valores p {
+    font-size: 20px;
+}
+
+.cards {
+    width: 25%;
+}
+
+.cards span {
+    border-bottom: 3px solid lightgreen;
+    padding-bottom: 4px;
+}
+
+.cards h3 {
+    color: #0B1F3A;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.cards p {
+    font-size: 20px;
+    margin-top: 25px;
+    color: #0B1F3A;
+}
+
+.titulo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.titulo-card img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.historia {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 5%;
+    padding: 50px 5%;
+}
+
+/* Organiza as duas imagens uma embaixo da outra */
+.imagens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.imagens img {
+    width: 300px;
+    height: 350px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.imagens p {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+/* Organiza todo o conteúdo à direita */
+.conteudo-historia {
+    flex: 1;
+    display: block;
+    text-align: left;
+    color: #0B1F3A;
+}
+
+/* Título principal */
+.conteudo-historia h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+/* Subtítulos */
+.conteudo-historia h3 {
+    font-size: 23px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.conteudo-historia span {
+    border-bottom: 3px solid lightgreen;
+    padding-bottom: 4px;
+}
+
+/* Textos */
+.conteudo-historia p {
+    font-size: 18px;
+}
+
+.rodape {
+    background-color: lightgreen;
+    color: #0B1F3A;
+    height: 70vh;
+    width: 100%;
+}
+
+.rodape img {
+    width: 30vw;
+    height: 30vh;
+    margin-top: 2%;
+}
+
+.rodape h3 {
+    margin-left: 10%;
+    text-align: left;
+    color: #0B1F3A;
+}
