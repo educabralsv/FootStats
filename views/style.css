@@ -247,21 +247,71 @@ html {
     font-size: 18px;
 }
 
+
+/* Rodapé */
 .rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
     background-color: lightgreen;
     color: #0B1F3A;
-    height: 70vh;
     width: 100%;
+    min-height: 350px;
+    padding: 50px 5%;
+    box-sizing: border-box;
 }
 
-.rodape img {
-    width: 30vw;
-    height: 30vh;
-    margin-top: 2%;
+/* Primeira coluna: logo e frases */
+.box {
+    width: 35%;
 }
 
-.rodape h3 {
-    margin-left: 10%;
-    text-align: left;
+.box img {
+    width: 250px;
+    height: auto;
+    display: block;
+}
+
+.box h3 {
     color: #0B1F3A;
+    font-size: 18px;
+    margin-left: 2%;
+    text-align: left;
+}
+
+/* Segunda coluna: links rápidos */
+.box-links {
+    width: 25%;
+}
+
+.box-links h3, .box-contato h2 {
+    color: #0B1F3A;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Terceira coluna: contato */
+.box-contato {
+    width: 25%;
+}
+
+/* Organização dos itens das duas últimas colunas */
+.box-links li, .box-contato li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+/* Ícones pequenos */
+.box-links img, .box-contato img {
+    width: 70px;
+    height: 45px;
+}
+
+/* Links */
+.box-links a, .box-contato a {
+    color: #0B1F3A;
+    text-decoration: none;
+    font-size: 16px;
 }
