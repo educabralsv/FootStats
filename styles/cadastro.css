@@ -1,0 +1,59 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    background-color: lightgreen;
+    width: 100vw;
+    height: 11vh;
+    flex-direction: row;
+}
+
+.logo {
+    width: 35%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.logo img {
+    width: 160px;
+    margin-left: 80px;
+    margin-top: 2px;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    color:#0B1F3A;
+    justify-content: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.botao-login {
+    background-color: #0B1F3A ;
+    color:white;
+    width: 7vw;
+    height: 5vh;
+    border-radius: 6px;
+}
