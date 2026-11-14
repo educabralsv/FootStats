@@ -56,4 +56,126 @@ html {
     width: 7vw;
     height: 5vh;
     border-radius: 6px;
+    cursor: pointer; 
+}
+
+.box-login-pai {
+    display: flex;
+    text-align: center;
+    justify-content:left;
+    padding: 30px;
+    gap: 8px;
+
+    background-image: url('../assets/background_cadastro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box-login-pai > img {
+    height: 60vh;
+    width: 60vw;
+    margin-top: 50px;
+}
+
+.box-login-filho {
+    width: 300px;                                           /* largura do card */
+    background-color: white;                                /* fundo branco */
+    border: 1px solid white;                                /* borda branca de 1px */
+    border-radius: 12px;                                    /* cantos arredondados */
+    padding: 20px;                                          /* espaço interno de 20px em todos os lados */
+    text-align: center; 
+}
+
+.boas-vindas {                                              /* seleciona o título "Cadastrar" */
+    font-size: 20px;                                        /* tamanho da letra */
+    font-weight: bold;                                      /* negrito */
+    color: #0B1F3A;                                         /* azul escuro */
+    margin-bottom: 10px;                                    /* espaço de 10px embaixo do título */
+}
+
+.campos {                                                   /* seleciona a área dos campos do formulário */
+    text-align: left;                /* textos alinhados à esquerda */
+}
+
+.campos label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0B1F3A;
+    margin-bottom: 5px;
+}
+
+.campos input {                                             /* seleciona as caixas de digitação (input) dos campos */
+    width: 100%;                                            /* ocupa toda a largura do card */
+    box-sizing: border-box;                                 /* conta padding e borda dentro dos 100%, para não estourar o card */
+    padding: 8px;                                           /* espaço interno de 8px */
+    margin-top: 4px;                                        /* espaço de 4px em cima */
+    margin-bottom: 10px;                                     /* espaço de 8px embaixo */
+    border: 1px solid #cccccc;                              /* borda cinza clara de 1px */
+    border-radius: 5px;                                     /* cantos arredondados */                               /* usa a mesma fonte do resto da página */
+    font-size: 12px;                                        /* tamanho da letra digitada */
+}
+
+.campos select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #0B1F3A;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.box-checkbox {                                         /* seleciona a caixa do checkbox dos termos */
+    display: flex;                   /* checkbox e texto lado a lado */
+    text-align: left;                /* alinhado à esquerda */
+    font-size: 12px;                 /* tamanho da letra */
+}
+
+.box-checkbox input {   
+    cursor: pointer;                                 /* seleciona o checkbox (a caixinha de marcar) */
+    margin-right: 10px;              /* espaço entre a caixinha e o texto */
+    width: 20px;                     /* largura da caixinha */
+    height: 20px;                    /* altura da caixinha */
+}
+
+.box-checkbox a {                                       /* seleciona os links dos termos */
+    text-decoration: none;           /* tira o sublinhado dos links */
+    font-weight: bold;               /* negrito */
+    color: #0B1F3A;                  /* azul claro */
+}
+
+.box-checkbox label {
+    color: #0B1F3A;
+}
+
+.botao-cadastrar button {                                      /* seleciona o botão "Cadastrar" */
+    width: 80%;                                             /* ocupa 90% da largura do card */
+    margin-top: 10px;                                       /* espaço de 10px em cima */
+    padding: 12px;                                          /* espaço interno de 12px (deixa o botão mais alto) */
+    background-color: #0B1F3A;                              /* fundo azul */
+    color: white;                                           /* texto branco */
+    border-radius: 5px;                                     /* cantos arredondados */
+    border: none;                                           /* tira a borda */
+    font-weight: bold;                                      /* negrito */
+    cursor: pointer;                                        /* o mouse vira "mãozinha" ao passar por cima */
+}
+
+.seguranca {                                                /* seleciona a mensagem de segurança de baixo do card */
+    display: flex;                                          /* coloca o ícone e o texto lado a lado */
+    justify-content: center;                                /* centraliza na horizontal */
+    align-items: center;                                    /* centraliza na vertical */
+    margin-top: 15px;                                       /* espaço de 15px em cima */
+    color: #666666;                                         /* texto cinza */
+    font-size: 10px;                                        /* letra pequena */
+}
+
+.seguranca img {                                            /* seleciona o ícone dentro da mensagem de segurança */
+    width: 16px;                     /* tamanho do ícone do escudo */
 }

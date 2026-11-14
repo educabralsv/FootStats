@@ -35,10 +35,19 @@
                 <span>Cadastrar</span>
             </div>
             <div class="campos">
-                <label for="ipt_nome"><img src="" alt="">Nome</label>
+                <label for="ipt_nome">Nome</label>
                 <input type="text" id="ipt_nome" placeholder="Digite seu nome">
                 <br>
-                <select id="time"><img src="" alt="">
+                <label for="ipt_email">Email</label>
+                <input type="text" id="ipt_email" placeholder="footstats@gmail.com">
+                <br>
+                <label for="ipt_senha">Senha</label>
+                <input type="password" id="ipt_senha" placeholder="Digite a senha">
+                <br>
+                <label for="ipt_confirmarSenha">Confirmar Senha</label>
+                <input type="password" id="ipt_confirmar_senha" placeholder="Confirme a senha">
+                <br>
+                <select id="time">
                     <option value="" selected disabled>Selecione o time que você torce</option>
                     <option value="">Atlético Mineiro</option>
                     <option value="">Botafogo</option>
@@ -53,16 +62,22 @@
                     <option value="">São Paulo</option>
                     <option value="">Vasco</option>
                 </select> 
-                <br>
-                <label for="ipt_email"><img src="" alt="">Email</label>
-                <input type="text" id="ipt_email" placeholder="footstats@gmail.com">
-                <br>
-                <label for="ipt_senha"><img src="" alt="">Senha</label>
-                <input type="password" id="ipt_senha" placeholder="Digite a senha">
-                <br>
-                <label for="ipt_confirmarSenha"><img src="" alt="">Confirmar Senha</label>
-                <input type="password" id="ipt_confirmar_senha" placeholder="Confirme a senha">
             </div>
+            <div class="box-checkbox">
+                <input type="checkbox" id="chk_termos">
+                <label for="chk_termos">
+                Li e concordo com os <a href="#">Termos de Uso</a> e <br> <a href="#">Política de Privacidade</a>
+                </label>
+            </div>
+
+            <div class="botao-cadastrar">
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+            <div class="seguranca">
+                <img src="../assets/escudo_seguranca.png" alt="">
+                <span> Seus dados estão protegido de ponta a ponta.</span>
+            </div>
+
         </div>
     </div>
 </body>
