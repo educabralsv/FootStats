@@ -5,7 +5,7 @@ USE footstats;
 CREATE TABLE time_ (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR (45) NOT NULL,
-estado VARCHAR (45) NOT NULL
+UF VARCHAR (2) NOT NULL
 );
 
 CREATE TABLE usuario (
@@ -14,6 +14,7 @@ nome VARCHAR (50) NOT NULL,
 email VARCHAR (50) NOT NULL UNIQUE,
 senha VARCHAR (50) NOT NULL,
 sexo VARCHAR (45) NOT NULL,
+CONSTRAINT chk_sexo CHECK (sexo IN ('Masculino', 'Feminino', 'Outros')),
 data_nascimento DATE NOT NULL,
 fk_time INT NOT NULL, 
 
@@ -28,7 +29,7 @@ descricao VARCHAR (150) NOT NULL
 
 CREATE TABLE questao (
 id INT AUTO_INCREMENT,
-questao VARCHAR (100) NOT NULL,
+questao VARCHAR (150) NOT NULL,
 fk_quiz INT NOT NULL,
 fk_alternativa_correta INT,
 
@@ -67,7 +68,7 @@ FOREIGN KEY (fk_alternativa_correta) REFERENCES alternativa (id);
 
 -- ------------------------- INSERTS ------------------------------
 
-INSERT INTO time_ (nome, estado) VALUES 
+INSERT INTO time_ (nome, UF) VALUES 
 ('São Paulo', 'SP'),
 ('Santos', 'SP'),
 ('Corinthians', 'SP'),
@@ -79,7 +80,8 @@ INSERT INTO time_ (nome, estado) VALUES
 ('Grêmio', 'RS'),
 ('Internacional', 'RS'),
 ('Atlético-MG', 'MG'),
-('Cruzeiro', 'MG');
+('Cruzeiro', 'MG'),
+('Não torço para nenhum time', '');
 
 INSERT INTO quiz (titulo, descricao) VALUES 
 ('Desafio FootStats', 'Você conhece os gigantes do futebol brasileiro? 
