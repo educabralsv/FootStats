@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FootStats | Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="barra-lateral">
+            <img src="../assets/FootStats - Logo.png" alt=""><br>
+            <ul>
+                <li>
+                    <a href="index_logado.html">Home</a><br>
+                </li>
+                <br>
+                <li>
+                    <a href="quiz.html">Quiz</a>
+                </li>
+                <br>
+                <li>
+                    <a href="dashboard.html">Dashboard</a><br><br><br><br><br>
+                </li>
+            </ul>
+            <button onclick="sair()">Logout</button>
+        </div>
+
+        <div class="conteudo-principal">
+            <h1>Dashboard</h1>
+            <p>Acompanhe as estatísticas e o desempenho dos usuários do FootStats.</p>
+
+            <div class="indicadores">
+                <div class="usuarios-cadastrados">
+                    <h3>Usuários Cadastrados</h3>
+                    <p id="totalUsuarios">0</p>
+                </div>
+
+                <div class="time-favorito">
+                    <h3>Time Favorito dos Usuários</h3>
+                    <p id="timeFavorito">-</p>
+                </div>
+
+                <div class="tentativas-realizadas">
+                    <h3>Tentativas Realizadas</h3>
+                    <p id="tentativasRealizadas">0</p>
+                </div>
+
+                <div class="total-acertos">
+                    <h3>Total de Acertos nas Tentativas</h3>
+                    <p id="totalAcertos">0</p>
+                </div>
+
+                <div class="media-aproveitamento">
+                    <h3>Média de Aproveitamento</h3>
+                    <p id="mediaAproveitamento">0%</p>
+                </div>
+            </div>
+
+            <div class="graficos">
+                <div class="grafico-times">
+                    <h2>Times favoritos dos usuários</h2>
+                    <canvas id="graficoTimes"></canvas>
+                </div>
+
+                <div class="grafico-aproveitamento">
+                    <h2>Evolução do aproveitamento</h2>
+                    <canvas id="graficoAproveitamento"></canvas>
+                </div>
+
+                <div class="grafico-acertos">
+                    <h2>Distribuição de acertos e erros</h2>
+                    <canvas id="graficoAcertos"></canvas>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootStats | Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <div class="logo">
+            <img src="../assets/FootStats - Logo.png" alt="">
+        </div>
+        <div class="navbar">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="index.html">Objetivo</a>
+            </li>
+            <li>
+                <a href="index.html">Valores</a>
+            </li>
+            <li>
+                <a href=index.html>Minha História</a>
+            </li>
+            <a href="cadastro.html"><button class="botao-cadastro">Cadastre-se</button></a>
+        </div>
+    </div>
+
+    <div class="box-login-pai">
+        <img src="../assets/FootStats - Logo.png" alt="">
+        <div class="box-login-filho">
+            <div class="boas-vindas">
+                <h4>Bem-Vindo(a)</h4>
+                <span>Entre na sua conta para continuar</span>
+            </div>
+
+            <div class="titulo-login">
+                <h4>Insira seu Login</h4>
+            </div>
+
+            <div class="campos">
+                <label for="ipt_email">E-mail</label>
+                <input type="text" id="ipt_email" placeholder="Insira seu E-mail">
+                <br>
+                <label for="ipt_senha">Senha</label>
+                <input type="password" id="ipt_senha" placeholder="Insira sua Senha">
+                <br>
+                <div id="div_mensagem_senha"></div>
+            </div><br>
+
+            <div class="botao-entrar">
+                <button onclick="autenticar()">Entrar</button>
+            </div>
+            <div id="msg_senha"></div>
+            <br>
+            <div class="links">
+                <a href="#">Esqueceu a senha?</a>
+                <br>
+                <a href="../views/cadastro.html">Primeira vez aqui? Cadastre-se!</a>
+            </div>
+
+            <div class="seguranca">
+                <span> Seus dados estão protegido de ponta a ponta.</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function autenticar() {
+        let email = ipt_email.value
+        let senha = ipt_senha.value
+
+        if (email == '') {
+            alert('Preencha o email')
+        } else if (senha == '') {
+            alert('Preencha a senha')
+        } else {
+
+            let contratoLogin = {
+                "emailServer": email,
+                "senhaServer": senha
+            };
+
+            fetch("http://localhost:8080/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(contratoLogin)
+            })
+                .then(function (resposta) {
+
+                    if (resposta.status == 200) {
+
+                        resposta.json().then(function (dados) {
+
+                            sessionStorage.ID_USUARIO = dados.id;
+                            sessionStorage.NOME_USUARIO = dados.nome;
+
+                            alert("Bem-vindo, " + dados.nome);
+
+                            window.location = "quiz.html"
+                        });
+
+                    } else {
+                        resposta.text().then(function (mensagem) {
+                            alert(mensagem);
+                        });
+                    }
+
+                })
+                .catch(function (erro) {
+                    console.log("Erro ao realizar login:", erro);
+                    alert("Não foi possível conectar ao servidor.");
+                });
+
+        }
+    }
+</script>

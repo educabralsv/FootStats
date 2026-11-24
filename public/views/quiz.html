@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FootStats | Quiz</title>
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="barra-lateral">
+            <img src="../assets/FootStats - Logo.png" alt=""><br>
+            <ul>
+                <li>
+                    <a href="index_logado.html">Home</a><br>
+                </li>
+                <br>
+                <li>
+                    <a href="quiz.html">Quiz</a>
+                </li>
+                <br>
+                <li>
+                    <a href="dashboard.html">Dashboard</a><br><br><br><br><br>
+                </li>
+            </ul>
+            <button onclick="sair()">Logout</button>
+        </div>
+
+        <div class="conteudo-principal">
+            <div class="cabecalho-quiz">
+                <h2>Quiz FootStats</h2> <br><br>
+                <p>Responda as perguntas e descubra seu conhecimento</p>
+            </div>
+
+            <div class="card-quiz">
+                <div class="area-perguntas" id="area_perguntas">
+                </div>
+                    
+                <div id="feedback_resposta">
+                </div>
+                    
+                <button type="button" id="btn_confirmar">Confirmar Resposta</button>
+                
+                <button type="button" id="btn_proxima">Próxima questão</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/quiz.js"></script>
+</body>
+
+</html>

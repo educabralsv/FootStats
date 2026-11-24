@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootStats | Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <div class="logo">
+            <img src="../assets/FootStats - Logo.png" alt="">
+        </div>
+        <div class="navbar">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="index.html">Objetivo</a>
+            </li>
+            <li>
+                <a href="index.html">Valores</a>
+            </li>
+            <li>
+                <a href=index.html>Minha História</a>
+            </li>
+            <a href="login.html"><button class="botao-login">Login</button></a>
+        </div>
+    </div>
+
+    <div class="box-login-pai">
+        <img src="../assets/FootStats - Logo.png" alt="">
+        <div class="box-login-filho">
+            <div class="boas-vindas">
+                <span>Cadastrar</span>
+            </div>
+            <div class="campos">
+                <label for="ipt_nome">Nome</label>
+                <input type="text" id="ipt_nome" placeholder="Digite seu nome">
+                <br>
+                <label for="ipt_email">Email</label>
+                <input type="text" id="ipt_email" placeholder="footstats@gmail.com">
+                <br>
+                <label for="ipt_senha">Senha</label>
+                <input type="password" id="ipt_senha" placeholder="Digite a senha">
+                <br>
+                <label for="ipt_confirmarSenha">Confirmar Senha</label>
+                <input type="password" id="ipt_confirmar_senha" placeholder="Confirme a senha">
+                <br>
+                <select id="time">
+                    <option value="" selected disabled>Selecione o time que você torce</option>
+                    <option value="11">Atlético Mineiro</option>
+                    <option value="7">Botafogo</option>
+                    <option value="3">Corinthians</option>
+                    <option value="12">Cruzeiro</option>
+                    <option value="5">Flamengo</option>
+                    <option value="6">Fluminense</option>
+                    <option value="9">Grêmio</option>
+                    <option value="10">Internacional</option>
+                    <option value="4">Palmeiras</option>
+                    <option value="2">Santos</option>
+                    <option value="1">São Paulo</option>
+                    <option value="8">Vasco</option>
+                    <option value="13">Outros</option>
+                    <option value="14">Não torço para nenhum time</option>
+                </select>
+            </div>
+            <div class="box-checkbox">
+                <input type="checkbox" id="chk_termos">
+                <label for="chk_termos">
+                    Li e concordo com os <a href="#">Termos de Uso</a> e <br> <a href="#">Política de Privacidade</a>
+                </label>
+            </div>
+
+            <div class="botao-cadastrar">
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+            <div class="seguranca">
+                <img src="../assets/escudo_seguranca.png" alt="">
+                <span> Seus dados estão protegido de ponta a ponta.</span>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        let nome = ipt_nome.value;
+        let email = ipt_email.value;
+        let senha = ipt_senha.value;
+        let confirmarSenha = ipt_confirmar_senha.value;
+        let time = document.getElementById("time").value;
+
+        if (nome == '') {
+            alert('Preencha o nome do usuário')
+        } else if (email == '') {
+            alert('Preencha o email do usuário')
+        } else if (!email.includes('@') || !email.includes('.')) {
+            alert('Informe um email válido');
+        } else if (senha == '') {
+            alert('Preencha a senha do usuário')
+        } else if (confirmarSenha == '') {
+            alert('Confirme a senha do usuário')
+        } else if (senha != confirmarSenha) {
+            alert('As senhas não correspondem')
+        } else if (time == '') {
+            alert('Selecione uma opção de time')
+        } else {
+
+            let contratoCadastro = {
+                "nomeServer": nome,
+                "emailServer": email,
+                "senhaServer": senha,
+                "fkTimeServer": Number(time)
+            }
+
+            fetch("http://localhost:8080/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(contratoCadastro)
+            })
+                .then(function (resposta) {
+                    resposta.text().then(function (mensagem) {
+
+                        if (resposta.status == 200) {
+                            alert("Cadastro realizado com sucesso!");
+                            console.log(mensagem);
+                            window.location = "login.html"
+                        } else {
+                            alert("Erro ao cadastrar: " + mensagem);
+                            console.log(mensagem);
+                        }
+
+                    });
+                })
+                .catch(function (erro) {
+                    console.log("Erro na requisição:", erro);
+                    alert("Não foi possível conectar à API.");
+                });
+        }
+    }
+</script>

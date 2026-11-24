@@ -1,0 +1,172 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    background-color: lightgreen;
+    width: 100vw;
+    height: 11vh;
+    flex-direction: row;
+}
+
+.logo {
+    width: 35%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.logo img {
+    width: 160px;
+    margin-left: 80px;
+    margin-top: 2px;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    color:#0B1F3A;
+    justify-content: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.botao-cadastro {
+    background-color: #0B1F3A ;
+    color:white;
+    width: 7vw;
+    height: 5vh;
+    border-radius: 6px;
+    cursor: pointer; 
+}
+
+.box-login-pai {
+    display: flex;
+    text-align: center;
+    justify-content:left;
+    padding: 30px;
+    gap: 8px;
+
+    background-image: url('../assets/background_cadastro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box-login-pai > img {
+    height: 60vh;
+    width: 60vw;
+    margin-top: 50px;
+}
+
+.box-login-filho {
+    width: 300px;                                         
+    background-color: white;                               
+    border: 1px solid white;                               
+    border-radius: 12px;                                   
+    padding: 20px;                                          
+    text-align: center; 
+}
+
+.boas-vindas h4 {                                            
+    font-size: 20px;                                        
+    font-weight: bold;                                      
+    color: #0B1F3A;                                       
+    margin-bottom: 13px;                                    
+}
+
+.boas-vindas span {
+    color: #7589ab;
+    font-size: 15px;
+}
+
+.titulo-login h4 {
+    color: #0B1F3A;
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.campos {                                                   /* seleciona a área dos campos do formulário */
+    text-align: left;                /* textos alinhados à esquerda */
+}
+
+.campos label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0B1F3A;
+    margin-bottom: 5px;
+}
+
+.campos input {                                             /* seleciona as caixas de digitação (input) dos campos */
+    width: 100%;                                            /* ocupa toda a largura do card */
+    box-sizing: border-box;                                 /* conta padding e borda dentro dos 100%, para não estourar o card */
+    padding: 8px;                                           /* espaço interno de 8px */
+    margin-top: 4px;                                        /* espaço de 4px em cima */
+    margin-bottom: 10px;                                     /* espaço de 8px embaixo */
+    border: 1px solid #cccccc;                              /* borda cinza clara de 1px */
+    border-radius: 5px;                                     /* cantos arredondados */                               /* usa a mesma fonte do resto da página */
+    font-size: 12px;                                        /* tamanho da letra digitada */
+}
+
+.botao-entrar button {
+    width: 90%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #0B1F3A;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.links {
+    margin-top: 22px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #0B1F3A;
+    font-size: 14px;
+}
+
+.seguranca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.seguranca span {
+    color: #888888;
+    font-size: 10px;
+}
+
+.senha {
+    color: #c20000;
+    font-size: 12px;
+    margin-top: 5px;
+}
