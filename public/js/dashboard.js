@@ -14,6 +14,23 @@ fetch("/dashboard/listarTimesFavoritos")
             }
             document.getElementById("timeFavorito").innerHTML = dados[0].nomeTime
 
+            var coresTimes = {
+                "São Paulo": "#E32636",
+                "Corinthians": "#1C1C1C",
+                "Santos": "#A6A6A6",
+                "Palmeiras": "#006437",
+                "Flamengo": "#C8102E",
+                "Fluminense": "#7A263A",
+                "Botafogo": "#000000",
+                "Vasco": "#333333",
+                "Internacional": "#D71920",
+                "Grêmio": "#0066A1",
+                "Atlético-MG": "#202020",
+                "Cruzeiro": "#005CA9",
+                "Outros": "#707070",
+                "Não torço para nenhum time": "#BDBDBD"
+            };
+
             new Chart(contextoTimes, {
                 type: "bar",
                 data: {
@@ -21,22 +38,9 @@ fetch("/dashboard/listarTimesFavoritos")
                     datasets: [{
                         label: "Quantidade de Usuários",
                         data: quantidadeUsuarios,
-                        backgroundColor: [
-                            '#E32636',
-                            '#1C1C1C',
-                            '#A6A6A6',
-                            '#006437',
-                            '#C8102E',
-                            '#7A263A',
-                            '#000000',
-                            '#333333',
-                            '#D71920',
-                            '#0066A1',
-                            '#202020',
-                            '#005CA9',
-                            '#707070',
-                            '#BDBDBD'
-                        ],
+                        backgroundColor: nomesTimes.map(function (time) {
+                            return coresTimes[time];
+                        }),
                     }
 
                     ]
