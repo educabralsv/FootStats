@@ -270,19 +270,30 @@ html {
 /* Primeira coluna: logo e frases */
 .box {
     width: 35%;
-}
-
-.box img {
-    width: 250px;
-    height: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .box h3 {
     color: #0B1F3A;
-    font-size: 18px;
-    margin-left: 2%;
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
+}
+
+.imagem-ods {
+    width: 60px;
+    height: auto;
+    align-self: center;
+}
+
+.box p {
+    color: #0B1F3A;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 350px;
 }
 
 /* Segunda coluna: links rápidos */
@@ -321,3 +332,4 @@ html {
     text-decoration: none;
     font-size: 16px;
 }
+
