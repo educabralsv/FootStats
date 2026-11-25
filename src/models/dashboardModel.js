@@ -85,6 +85,7 @@ function listarQuestoesDificeis() {
         2
     ) AS percentualAcertos,
     questao.questao,
+    questao.id AS numeroQuestao,
     SUM(alternativa.alternativa_correta) AS totalAcertos,
     COUNT(*) AS totalRespostas
     FROM questao
@@ -96,7 +97,7 @@ function listarQuestoesDificeis() {
     ON tentativa.id = tentativa_alternativa.fk_tentativa
     WHERE tentativa.data_fim IS NOT NULL
     GROUP BY questao.id, questao.questao
-    ORDER BY percentualAcertos ASC;
+    ORDER BY questao.id ASC;
     `
 
     return database.executar(instrucaoSql)

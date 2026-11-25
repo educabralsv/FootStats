@@ -102,7 +102,8 @@ fetch("/dashboard/listarAproveitamento/" + sessionStorage.ID_USUARIO)
                     labels: tentativas,
                     datasets: [{
                         label: "Aproveitamento (%)",
-                        data: aproveitamentos
+                        data: aproveitamentos,
+                        color: "#0B1F3A"
                     }]
 
                 },
@@ -116,6 +117,11 @@ fetch("/dashboard/listarAproveitamento/" + sessionStorage.ID_USUARIO)
                     scales: {
                         y: {
                             beginAtZero: true,
+                            ticks: {
+                                callback: function (valor) {
+                                    return valor + "%";
+                                }
+                            },
                             title: {
                                 display: true,
                                 text: "Aproveitamento (%)"
@@ -137,13 +143,15 @@ fetch("/dashboard/listarQuestoesDificeis/")
 
     .then(function (resposta) {
         resposta.json().then(function (dados) {
+            console.log("DADOS RECEBIDOS:", dados);
+            console.log("PRIMEIRA QUESTÃO:", dados[0]);
             var canvasAcertos = document.getElementById("graficoAcertos");
             var contextoAcertos = canvasAcertos.getContext("2d");
             var nomesQuestoes = []
             var percentuaisAcertos = []
 
             for (let i = 0; i < dados.length; i++) {
-                nomesQuestoes.push(dados[i].questao)
+                nomesQuestoes.push("Questão " + dados[i].numeroQuestao)
                 percentuaisAcertos.push(dados[i].percentualAcertos)
             }
 
@@ -153,11 +161,14 @@ fetch("/dashboard/listarQuestoesDificeis/")
                     labels: nomesQuestoes,
                     datasets: [{
                         label: "Percentual de Acertos (%)",
-                        data: percentuaisAcertos
-                    }
-                ]
-            },
-            options: {
+                        data: percentuaisAcertos,
+                        backgroundColor: "#65B985",
+                        borderColor: "#65B985",
+                        categoryPercentage: 0.65,
+                        barPercentage: 0.8
+                    }]
+                },
+                options: {
                     indexAxis: "y",
                     plugins: {
                         legend: {
@@ -166,6 +177,11 @@ fetch("/dashboard/listarQuestoesDificeis/")
                     },
                     scales: {
                         x: {
+                            ticks: {
+                                callback: function (valor) {
+                                    return valor + "%";
+                                }
+                            },
                             beginAtZero: true,
                             title: {
                                 display: true,
@@ -173,6 +189,9 @@ fetch("/dashboard/listarQuestoesDificeis/")
                             }
                         },
                         y: {
+                            ticks: {
+                                autoSkip: false
+                            },
                             title: {
                                 display: true,
                                 text: "Questões"
@@ -184,3 +203,8 @@ fetch("/dashboard/listarQuestoesDificeis/")
 
         })
     })
+
+function sair() {
+    sessionStorage.clear();
+    window.location = "login.html";
+}
