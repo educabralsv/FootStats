@@ -1,3 +1,4 @@
+console.log("DASHBOARD.JS FOI CARREGADO!");
 var canvasTimes = document.getElementById("graficoTimes")
 var contextoTimes = canvasTimes.getContext("2d")
 
@@ -133,6 +134,7 @@ fetch("/dashboard/listarAproveitamento/" + sessionStorage.ID_USUARIO)
     });
 
 fetch("/dashboard/listarQuestoesDificeis/")
+
     .then(function (resposta) {
         resposta.json().then(function (dados) {
             var canvasAcertos = document.getElementById("graficoAcertos");
@@ -147,16 +149,16 @@ fetch("/dashboard/listarQuestoesDificeis/")
 
             new Chart(contextoAcertos, {
                 type: "bar",
-                indexAxis: "y",
                 data: {
                     labels: nomesQuestoes,
                     datasets: [{
                         label: "Percentual de Acertos (%)",
                         data: percentuaisAcertos
                     }
-                    ]
-                },
-                options: {
+                ]
+            },
+            options: {
+                    indexAxis: "y",
                     plugins: {
                         legend: {
                             display: false
