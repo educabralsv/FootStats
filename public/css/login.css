@@ -106,8 +106,8 @@ html {
     margin-bottom: 25px;
 }
 
-.campos {                                                   /* seleciona a área dos campos do formulário */
-    text-align: left;                /* textos alinhados à esquerda */
+.campos {                                                 
+    text-align: left;                
 }
 
 .campos label {
@@ -120,15 +120,15 @@ html {
     margin-bottom: 5px;
 }
 
-.campos input {                                             /* seleciona as caixas de digitação (input) dos campos */
-    width: 100%;                                            /* ocupa toda a largura do card */
-    box-sizing: border-box;                                 /* conta padding e borda dentro dos 100%, para não estourar o card */
-    padding: 8px;                                           /* espaço interno de 8px */
-    margin-top: 4px;                                        /* espaço de 4px em cima */
-    margin-bottom: 10px;                                     /* espaço de 8px embaixo */
-    border: 1px solid #cccccc;                              /* borda cinza clara de 1px */
-    border-radius: 5px;                                     /* cantos arredondados */                               /* usa a mesma fonte do resto da página */
-    font-size: 12px;                                        /* tamanho da letra digitada */
+.campos input {                                            
+    width: 100%;                                            
+    box-sizing: border-box;                                 
+    padding: 8px;                                           
+    margin-top: 4px;                                        
+    margin-bottom: 10px;                                     
+    border: 1px solid #cccccc;                              
+    border-radius: 5px;                                                                   
+    font-size: 12px;                                        
 }
 
 .botao-entrar button {

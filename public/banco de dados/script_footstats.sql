@@ -1,5 +1,4 @@
 CREATE DATABASE footstats;
-
 USE footstats;
 
 CREATE TABLE time_ (
@@ -13,9 +12,6 @@ id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR (50) NOT NULL,
 email VARCHAR (50) NOT NULL UNIQUE,
 senha VARCHAR (255) NOT NULL,
-sexo VARCHAR (45) NOT NULL,
-CONSTRAINT chk_sexo CHECK (sexo IN ('Masculino', 'Feminino', 'Prefiro não informar')),
-data_nascimento DATE NOT NULL,
 fk_time INT NOT NULL,
 
 FOREIGN KEY (fk_time) REFERENCES time_ (id)
@@ -137,3 +133,223 @@ INSERT INTO alternativa (alternativa, ordem, alternativa_correta, fk_questao) VA
 ('Palmeiras', 'B', 0, 10),
 ('São Paulo', 'C', 1, 10),
 ('Santos', 'D', 0, 10);
+
+INSERT INTO usuario (nome, email, senha, fk_time) VALUES
+
+-- São Paulo (14 novos)
+('Usuario SP 02', 'sp02@footstats.com', 'senha_teste', 1),
+('Usuario SP 03', 'sp03@footstats.com', 'senha_teste', 1),
+('Usuario SP 04', 'sp04@footstats.com', 'senha_teste', 1),
+('Usuario SP 05', 'sp05@footstats.com', 'senha_teste', 1),
+('Usuario SP 06', 'sp06@footstats.com', 'senha_teste', 1),
+('Usuario SP 07', 'sp07@footstats.com', 'senha_teste', 1),
+('Usuario SP 08', 'sp08@footstats.com', 'senha_teste', 1),
+('Usuario SP 09', 'sp09@footstats.com', 'senha_teste', 1),
+('Usuario SP 10', 'sp10@footstats.com', 'senha_teste', 1),
+('Usuario SP 11', 'sp11@footstats.com', 'senha_teste', 1),
+('Usuario SP 12', 'sp12@footstats.com', 'senha_teste', 1),
+('Usuario SP 13', 'sp13@footstats.com', 'senha_teste', 1),
+('Usuario SP 14', 'sp14@footstats.com', 'senha_teste', 1),
+('Usuario SP 15', 'sp15@footstats.com', 'senha_teste', 1),
+
+-- Flamengo (12)
+('Usuario Flamengo 01', 'flamengo01@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 02', 'flamengo02@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 03', 'flamengo03@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 04', 'flamengo04@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 05', 'flamengo05@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 06', 'flamengo06@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 07', 'flamengo07@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 08', 'flamengo08@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 09', 'flamengo09@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 10', 'flamengo10@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 11', 'flamengo11@footstats.com', 'senha_teste', 5),
+('Usuario Flamengo 12', 'flamengo12@footstats.com', 'senha_teste', 5),
+
+-- Corinthians (12)
+('Usuario Corinthians 01', 'corinthians01@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 02', 'corinthians02@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 03', 'corinthians03@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 04', 'corinthians04@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 05', 'corinthians05@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 06', 'corinthians06@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 07', 'corinthians07@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 08', 'corinthians08@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 09', 'corinthians09@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 10', 'corinthians10@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 11', 'corinthians11@footstats.com', 'senha_teste', 3),
+('Usuario Corinthians 12', 'corinthians12@footstats.com', 'senha_teste', 3),
+
+-- Palmeiras (11)
+('Usuario Palmeiras 01', 'palmeiras01@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 02', 'palmeiras02@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 03', 'palmeiras03@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 04', 'palmeiras04@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 05', 'palmeiras05@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 06', 'palmeiras06@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 07', 'palmeiras07@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 08', 'palmeiras08@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 09', 'palmeiras09@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 10', 'palmeiras10@footstats.com', 'senha_teste', 4),
+('Usuario Palmeiras 11', 'palmeiras11@footstats.com', 'senha_teste', 4),
+
+-- Santos (9)
+('Usuario Santos 01', 'santos01@footstats.com', 'senha_teste', 2),
+('Usuario Santos 02', 'santos02@footstats.com', 'senha_teste', 2),
+('Usuario Santos 03', 'santos03@footstats.com', 'senha_teste', 2),
+('Usuario Santos 04', 'santos04@footstats.com', 'senha_teste', 2),
+('Usuario Santos 05', 'santos05@footstats.com', 'senha_teste', 2),
+('Usuario Santos 06', 'santos06@footstats.com', 'senha_teste', 2),
+('Usuario Santos 07', 'santos07@footstats.com', 'senha_teste', 2),
+('Usuario Santos 08', 'santos08@footstats.com', 'senha_teste', 2),
+('Usuario Santos 09', 'santos09@footstats.com', 'senha_teste', 2),
+
+-- Cruzeiro (9)
+('Usuario Cruzeiro 01', 'cruzeiro01@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 02', 'cruzeiro02@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 03', 'cruzeiro03@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 04', 'cruzeiro04@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 05', 'cruzeiro05@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 06', 'cruzeiro06@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 07', 'cruzeiro07@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 08', 'cruzeiro08@footstats.com', 'senha_teste', 12),
+('Usuario Cruzeiro 09', 'cruzeiro09@footstats.com', 'senha_teste', 12),
+
+-- Grêmio (8)
+('Usuario Gremio 01', 'gremio01@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 02', 'gremio02@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 03', 'gremio03@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 04', 'gremio04@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 05', 'gremio05@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 06', 'gremio06@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 07', 'gremio07@footstats.com', 'senha_teste', 9),
+('Usuario Gremio 08', 'gremio08@footstats.com', 'senha_teste', 9),
+
+-- Atlético-MG (7)
+('Usuario Atletico 01', 'atletico01@footstats.com', 'senha_teste', 11),
+('Usuario Atletico 02', 'atletico02@footstats.com', 'senha_teste', 11),
+('Usuario Atletico 03', 'atletico03@footstats.com', 'senha_teste', 11),
+('Usuario Atletico 04', 'atletico04@footstats.com', 'senha_teste', 11),
+('Usuario Atletico 05', 'atletico05@footstats.com', 'senha_teste', 11),
+('Usuario Atletico 06', 'atletico06@footstats.com', 'senha_teste', 11),
+('Usuario Atletico 07', 'atletico07@footstats.com', 'senha_teste', 11),
+
+-- Fluminense (5)
+('Usuario Fluminense 01', 'fluminense01@footstats.com', 'senha_teste', 6),
+('Usuario Fluminense 02', 'fluminense02@footstats.com', 'senha_teste', 6),
+('Usuario Fluminense 03', 'fluminense03@footstats.com', 'senha_teste', 6),
+('Usuario Fluminense 04', 'fluminense04@footstats.com', 'senha_teste', 6),
+('Usuario Fluminense 05', 'fluminense05@footstats.com', 'senha_teste', 6),
+
+-- Vasco (4)
+('Usuario Vasco 01', 'vasco01@footstats.com', 'senha_teste', 8),
+('Usuario Vasco 02', 'vasco02@footstats.com', 'senha_teste', 8),
+('Usuario Vasco 03', 'vasco03@footstats.com', 'senha_teste', 8),
+('Usuario Vasco 04', 'vasco04@footstats.com', 'senha_teste', 8),
+
+-- Botafogo (3)
+('Usuario Botafogo 01', 'botafogo01@footstats.com', 'senha_teste', 7),
+('Usuario Botafogo 02', 'botafogo02@footstats.com', 'senha_teste', 7),
+('Usuario Botafogo 03', 'botafogo03@footstats.com', 'senha_teste', 7),
+
+-- Internacional (3)
+('Usuario Internacional 01', 'internacional01@footstats.com', 'senha_teste', 10),
+('Usuario Internacional 02', 'internacional02@footstats.com', 'senha_teste', 10),
+('Usuario Internacional 03', 'internacional03@footstats.com', 'senha_teste', 10),
+
+-- Outros (2)
+('Usuario Outros 01', 'outros01@footstats.com', 'senha_teste', 13),
+('Usuario Outros 02', 'outros02@footstats.com', 'senha_teste', 13),
+
+-- Não torce para nenhum time (1)
+('Usuario Sem Time 01', 'semtime01@footstats.com', 'senha_teste', 14);
+
+
+
+-- SELECTS DASHBOARD
+-- Contar usuarios
+SELECT COUNT(*) AS totalUsuarios
+FROM usuario;
+
+-- Listar times favoritos
+SELECT
+    time_.nome AS nomeTime,
+    COUNT(usuario.id) AS quantidadeUsuarios
+    FROM time_
+    LEFT JOIN usuario ON usuario.fk_time = time_.id
+    GROUP BY time_.id, time_.nome
+    ORDER BY quantidadeUsuarios DESC;
+    
+-- Contar Tentativas
+SELECT COUNT(*) AS totalTentativas
+    FROM tentativa
+    WHERE data_fim IS NOT NULL;
+    
+-- Contar acertos
+SELECT COUNT(*) AS totalAcertos
+    FROM alternativa
+    JOIN tentativa_alternativa
+    ON alternativa.id = tentativa_alternativa.fk_alternativa
+    WHERE alternativa.alternativa_correta = 1;
+    
+-- Contar media porcentagem 
+SELECT ROUND (SUM(alternativa_correta)  / (COUNT(*) ) * 100 , 2) AS mediaAproveitamento
+    FROM alternativa 
+    JOIN tentativa_alternativa ON alternativa.id = tentativa_alternativa.fk_alternativa
+    JOIN tentativa ON tentativa.id = tentativa_alternativa.fk_tentativa
+    WHERE tentativa.data_fim IS NOT NULL;
+    
+-- Listar aproveitamento 
+SELECT
+        tentativa.id AS numeroTentativa,
+        ROUND((SUM(alternativa.alternativa_correta) / COUNT(*)) * 100, 2) AS aproveitamento
+    FROM tentativa
+    JOIN tentativa_alternativa
+        ON tentativa.id = tentativa_alternativa.fk_tentativa
+    JOIN alternativa
+        ON alternativa.id = tentativa_alternativa.fk_alternativa
+    WHERE tentativa.data_fim IS NOT NULL
+    AND tentativa.fk_usuario = ?
+    GROUP BY tentativa.id
+    ORDER BY tentativa.id;
+    
+-- Listar Questoes Dificeis
+ SELECT
+    ROUND(
+        (SUM(alternativa.alternativa_correta) / COUNT(*)) * 100,
+        2
+    ) AS percentualAcertos,
+    questao.questao,
+    questao.id AS numeroQuestao,
+    SUM(alternativa.alternativa_correta) AS totalAcertos,
+    COUNT(*) AS totalRespostas
+    FROM questao
+    JOIN alternativa
+    ON questao.id = alternativa.fk_questao
+    JOIN tentativa_alternativa
+    ON alternativa.id = tentativa_alternativa.fk_alternativa
+    JOIN tentativa
+    ON tentativa.id = tentativa_alternativa.fk_tentativa
+    WHERE tentativa.data_fim IS NOT NULL
+    GROUP BY questao.id, questao.questao
+    ORDER BY questao.id ASC;
+    
+    
+    
+-- SELECTS QUIZ
+-- Listar Perguntas
+SELECT
+            questao.id AS idQuestao,
+            questao.questao,
+            alternativa.id AS idAlternativa,
+            alternativa.alternativa,
+            alternativa.ordem
+        FROM questao
+        JOIN alternativa
+            ON questao.id = alternativa.fk_questao
+        ORDER BY questao.id, alternativa.ordem;
+
+-- Verificar Resposta
+SELECT alternativa_correta
+    FROM alternativa
+    WHERE id = ?

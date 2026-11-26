@@ -98,10 +98,10 @@ html {
 
 .sobre-site h2 {
     color: #0B1F3A;
-    white-space: nowrap; /* Impede que o texto quebre de linha */
+    white-space: nowrap; 
     font-size: 35px;
     position: relative;
-    left: -60px; /* Desloca o título 60px para a esquerda */
+    left: -60px; 
 }
 
 .sobre-site h2 span {
@@ -120,8 +120,8 @@ html {
 .sobre-site img {
     width: 230px;
     height: auto;
-    transform: scale(1.4); /* Aumenta visualmente a imagem em 40% */
-    transform-origin: right center /* Faz o aumento acontecer a partir do lado esquerdo */
+    transform: scale(1.4); 
+    transform-origin: right center 
 }
 
 .valores {
@@ -199,7 +199,6 @@ html {
     padding: 50px 5%;
 }
 
-/* Organiza as duas imagens uma embaixo da outra */
 .imagens {
     display: flex;
     flex-direction: column;
@@ -222,7 +221,6 @@ html {
     margin-top: 7px;
 }
 
-/* Organiza todo o conteúdo à direita */
 .conteudo-historia {
     flex: 1;
     display: block;
@@ -230,13 +228,11 @@ html {
     color: #0B1F3A;
 }
 
-/* Título principal */
 .conteudo-historia h2 {
     font-size: 35px;
     margin-bottom: 25px;
 }
 
-/* Subtítulos */
 .conteudo-historia h3 {
     font-size: 23px;
     margin-top: 25px;
@@ -248,13 +244,11 @@ html {
     padding-bottom: 4px;
 }
 
-/* Textos */
 .conteudo-historia p {
     font-size: 18px;
 }
 
 
-/* Rodapé */
 .rodape {
     display: flex;
     justify-content: space-around;
@@ -267,7 +261,6 @@ html {
     box-sizing: border-box;
 }
 
-/* Primeira coluna: logo e frases */
 .box {
     width: 35%;
 }
@@ -285,7 +278,6 @@ html {
     text-align: left;
 }
 
-/* Segunda coluna: links rápidos */
 .box-links {
     width: 25%;
 }
@@ -296,12 +288,10 @@ html {
     margin-bottom: 15px;
 }
 
-/* Terceira coluna: contato */
 .box-contato {
     width: 25%;
 }
 
-/* Organização dos itens das duas últimas colunas */
 .box-links li, .box-contato li {
     display: flex;
     align-items: center;
@@ -309,13 +299,11 @@ html {
     margin-bottom: 10px;
 }
 
-/* Ícones pequenos */
 .box-links img, .box-contato img {
     width: 70px;
     height: 45px;
 }
 
-/* Links */
 .box-links a, .box-contato a {
     color: #0B1F3A;
     text-decoration: none;
